@@ -1,16 +1,57 @@
-# React + Vite
+# 🍩 The Simpsons Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A browser-based memory card game built with React, featuring characters from The Simpsons. Test your memory by clicking each character only once — without repeating!
 
-Currently, two official plugins are available:
+## 🎮 How to Play
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Click on a card to score a point
+- **Don't click the same character twice!** If you do, it's game over
+- Cards shuffle after every click to keep you on your toes
+- Progress through levels by clicking all cards without repeating
+- Try to beat your best score!
 
-## React Compiler
+## 📈 Levels
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Level | Cards | Grid |
+|-------|-------|------|
+| 0     | 4     | 2x2  |
+| 1     | 6     | 3x2  |
+| 2     | 9     | 3x3  |
+| 3     | 12    | 4x3  |
+| 4     | 15    | 5x3  |
+| 5     | 18    | 6x3  |
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** — UI and state management
+- **Vite** — build tool
+- **CSS** — custom styling
+- **The Simpsons API** — character data and portraits (`thesimpsonsapi.com`)
+
+## 🚀 Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Header.jsx       # Score display
+│   ├── Body.jsx         # Game board container
+│   ├── MemoryCard.jsx   # Individual card
+│   └── GameOver.jsx     # Game over screen
+├── assets/              # Images and icons
+├── App.jsx              # Main logic & state
+└── App.css              # Styles
+```
+
+## ✨ Features
+
+- Fetches 64 random Simpsons characters on load
+- Progressive difficulty across 6 levels
+- Tracks current score and best score
+- Fully randomized board on every click
