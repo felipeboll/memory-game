@@ -1,0 +1,30 @@
+import { useState } from 'react'
+import bgImage from '../assets/Game-Over.png'
+
+
+function GameOver({bestScore, handleReset}) {
+
+  return (
+    <div className='game-over-section'>
+        <div>
+            <img src={bgImage}></img>
+            <h3>Your best score is {bestScore}</h3>
+        </div>
+        <button onClick={handleReset}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2057_73)">
+                    <path d="M11.143 0.63981C7.63031 -0.847065 3.57866 0.334373 1.43406 3.432L0.749687 2.91887C0.44625 2.6895 0 2.90544 0 3.29387V7.98137C0 8.32637 0.361562 8.55544 0.678437 8.40075L4.42844 6.52575C4.73813 6.37044 4.77906 5.94106 4.49969 5.73137L3.69969 5.13106C5.22531 2.81356 8.08928 2.40169 10.0477 3.22981C14.2418 5.00637 14.2355 11.0017 10.0471 12.7742C7.36387 13.9102 4.32166 12.6381 3.21719 10.0298C2.915 9.3139 2.09094 8.97922 1.375 9.28203C0.657812 9.58422 0.324375 10.4108 0.626875 11.1239C2.3225 15.1433 7.04584 17.0998 11.1421 15.3642C17.6237 12.6277 17.6146 3.37356 11.143 0.63981Z" fill="white"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_2057_73">
+                        <rect width="16" height="16" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            Restart
+        </button>
+    </div>
+  )
+}
+
+export default GameOver;

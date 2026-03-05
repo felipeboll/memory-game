@@ -1,0 +1,197 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh; 
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0px;
+  border-bottom: solid 1px var(--blue-light-stroke);
+  max-width: 1440px;
+  width: 100%;
+}
+
+.header div{
+  display: flex;
+  gap: 20px;
+}
+
+.logo{
+  object-fit: contain;
+}
+
+.red-separator{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 28px;
+  color: var(--red-primary);
+  stroke-width: 1px;
+  -webkit-text-stroke: 1px var(--brown-stroke);
+}
+
+.game-body {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  padding: 20px 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.memory-card-section{
+   display: grid;
+  grid-template-columns: repeat(var(--columns, 2), 1fr);
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+}
+
+.memory-card{
+  border-radius: 26px;
+  background: var(--White);
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.10);
+  display: flex;
+  max-width: 180px;
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.memory-card:hover{
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.memory-card-image{
+    height: 130px; 
+    min-height: 0;
+    width: 100%;
+    object-fit: cover; 
+    object-position: top;
+    border-radius: 12px;
+    border: 1px solid var(--blue-light-stroke);
+}
+
+.game-over-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.10);
+  padding: 80px;
+  gap: 40px;
+}
+
+.game-over-section div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-over-section button{
+  border-radius: 30px;
+  background: var(--blue-secondary);
+  display: flex;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #FFF;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 16px */
+  transition: all ease-in-out 200ms;
+  border: none;
+}
+
+.game-over-section button:hover, 
+.game-over-section button:focus,
+.game-over-section button:focus-visible {
+  background: #00468D;
+  border: none;
+  outline: none;
+}
+
+.game-over-section h3{
+  font-size: 28px;
+}
