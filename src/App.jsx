@@ -30,7 +30,11 @@ function App() {
 
   useEffect(() => {
 
-    const loadCharacters = async () => {
+    loadCharacters();
+
+  }, []);
+
+  const loadCharacters = async () => {
       const INITIAL_BATCH = 4;
       const TOTAL = 64;
 
@@ -69,12 +73,8 @@ function App() {
 
         setCharacters(prev => [...prev, ...restChars]);
       }
-    };
-
-    loadCharacters();
-
-  }, []);
-
+  };
+  
   useEffect(() => {
 
     if(level != 0){
@@ -109,6 +109,7 @@ function App() {
   }
 
   const handleReset = () =>{
+      loadCharacters();
       setScore(0);
       setLevel(0);
       setReset(false);
